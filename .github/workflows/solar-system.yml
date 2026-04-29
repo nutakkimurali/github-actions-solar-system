@@ -47,6 +47,8 @@ jobs:
             uses: actions/setup-node@v4
             with:
               node-version: 18
+          - name: Install Dependencies # Added this to fix "nyc: not found"
+            run: npm install
           - name: Run Coverage
             id: code-coverage
             run: npm run coverage
